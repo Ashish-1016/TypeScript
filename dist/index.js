@@ -76,4 +76,27 @@ function welcomeStudets(x) {
         console.log("Welcome lone traveler " + x);
     }
 }
-// Some things work for union type methods for example slice() method works for both number | string
+// Some things work for union type methods for example slice() method works for both number/array[] | string
+function getFirstThreeStudents(x) {
+    return x.slice(0, 3);
+}
+function studInfo(studObj) {
+    console.log(studObj);
+}
+studInfo({ firstName: "alice", lastName: "bob", rollNo: 23 });
+function print(obj) {
+    console.log(obj);
+}
+print({ x: 100, y: 200 });
+//The above context is just same as the context for anonymous functions, just because TS only need ths structure of the value and not other info
+//Type Aliases and Interfaces
+//Type assertions
+const myCanvas = document.getElementById("main_canvas");
+// *** Because type assertions are removed at compile-time, there is no runtime checking associated with a type assertion. There won’t be an exception or null generated if the type assertion is wrong. *** 
+//strictNullChecks: off -> Bad practice
+//StrictNullChecks: on -> Good practice
+//! Not-null assertion
+function liveDangerously(x) {
+    // No error
+    console.log(x.toFixed());
+}
